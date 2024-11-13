@@ -16,3 +16,7 @@ export class ProveedoresSchema extends Document implements IProveedores{
     activo_proveedor: boolean;
 }
 export const proveedoresSchema = schemaFactory.createForClass(ProveedoresSchema);
+
+export class Proveedores {
+    // ... definición de la clase ...
+}
