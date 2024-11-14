@@ -43,7 +43,7 @@ export class ProductosControllers{
 
     @Get()
     async findAll(): Promise<Productos[]>{
-        return await this.productosServices.findAllProductos();
+        return await this.productosServices.findAllProdutos();
     }
 
 
@@ -54,8 +54,8 @@ export class ProductosControllers{
     }
 
     @Put('update/:id')
-    async update(@Param('id') id: string, @Body() updateProductosDto: UpdateProductosDto): Promise<Productos>{
-        const updateProducto = await this.productosServices.update(id, updateProductosDto);
+    async udpate(@Param('id') id: string, @Body() updateProductosDto: UpdateProductosDto): Promise<Productos>{
+        const updateProducto = await this.productosServices.udpate(id, updateProductosDto);
         if(!updateProducto){
             throw new NotFoundException(`Producto con Id ${id} no se encontro`);
         }
@@ -63,8 +63,8 @@ export class ProductosControllers{
     }
 
     @Patch('updatePartial/:id')
-    async updatePartial(@Param('id') id: string, @Body() updateProductosDto: UpdateProductosDto): Promise<Productos> {
-        const updatePartialProducto = await this.productosServices.updatePartial(id, updateProductosDto);
+    async udpatePartial(@Param('id') id: string, @Body() updateProductosDto: UpdateProductosDto): Promise<Productos>{
+        const updatePartialProducto = await this.productosServices.udpatePartial(id, updateProductosDto);
         if(!updatePartialProducto){
             throw new NotFoundException(`Producto con Id ${id} no se encontro`);
         }

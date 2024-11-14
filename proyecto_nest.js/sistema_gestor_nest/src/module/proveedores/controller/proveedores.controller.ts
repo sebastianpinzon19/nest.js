@@ -10,7 +10,7 @@ import {
   Patch,
 } from '@nestjs/common';
 
-import { ProveedoresService } from '../service/proveedores.service';
+import { ProveedoresServices } from '../service/proveedores.service';
 import { CreateProveedoresDto } from '../dto/create-proveedores.dto';
 import { UpdateProveedoresDto } from '../dto/update-proveedores.dto';
 import { Proveedores } from '../schema/proveedores.schema';
@@ -23,7 +23,7 @@ import { ApiTags, ApiResponse, ApiOperation, ApiBody, ApiParam } from '@nestjs/s
 export class ProveedoresController {
     
     
-    constructor(private readonly proveedoresService: ProveedoresService) 
+    constructor(private readonly proveedoresService: ProveedoresServices) 
     {
 
     }
@@ -62,7 +62,7 @@ export class ProveedoresController {
       type: String,
     })
     async deactive(@Param('id') id: string): Promise<void> {
-      await this.proveedoresService.deactivate(id);
+      await this.proveedoresService.deactive(id);
     }
     
     @Put('active/:id')

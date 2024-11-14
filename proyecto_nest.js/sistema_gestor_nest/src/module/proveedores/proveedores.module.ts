@@ -1,15 +1,13 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
-import { ProveedoresService } from './service/proveedores.service';
-import { ProveedoresController } from './controller/proveedores.controller';
-import { ProveedoresSchema } from './schema/proveedores.schema';
+import { Proveedores, ProveedoresSchema } from './schema/proveedores.schema';
+import { ProveedoresServices } from './service/proveedores.service';
 
 @Module({
-    imports: [MongooseModule.forFeature([{
-        name: 'Proveedores.name',
-        schema: ProveedoresSchema,
-    }])],
-    controllers: [ProveedoresController],
-    providers: [ProveedoresService],
+  imports: [
+    MongooseModule.forFeature([{ name: Proveedores.name, schema: ProveedoresSchema }]),
+  ],
+  providers: [ProveedoresServices],
+  exports: [ProveedoresServices],
 })
 export class ProveedoresModule {}

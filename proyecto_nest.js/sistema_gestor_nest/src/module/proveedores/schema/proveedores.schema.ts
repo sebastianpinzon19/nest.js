@@ -1,22 +1,18 @@
-import { prop, schema, schemaFactory} from '@nestjs/mongoose';
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 import { IProveedores } from '../interface/proveedores.interfaces';
-@schema()
-export class ProveedoresSchema extends Document implements IProveedores{
-    @prop({required: true})
+@Schema()
+export class Proveedores extends Document implements IProveedores{
+    @Prop({required: true})
     nombre_proveedor: string;
 
-    @prop({require: true})
+    @Prop({required: true})
     email_proveedor: string;
 
-    @prop({require: true})
+    @Prop({required: true})
     celular_proveedor: string;
 
-    @prop({require: true})
-    activo_proveedor: boolean;
+    @Prop({default: true})
+    activo_proveedor?:boolean;
 }
-export const proveedoresSchema = schemaFactory.createForClass(ProveedoresSchema);
-
-export class Proveedores {
-    // ... definición de la clase ...
-}
+export const ProveedoresSchema = SchemaFactory.createForClass(Proveedores);

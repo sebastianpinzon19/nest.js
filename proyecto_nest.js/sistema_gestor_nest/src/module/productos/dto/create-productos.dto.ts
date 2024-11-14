@@ -1,5 +1,5 @@
 import { IsString, IsNumber, IsOptional, IsArray, ArrayNotEmpty } from 'class-validator';
-import { Clientes } from 'src/module/clientes/schema/clientes.schema';
+import { Clientes } from '../../../module/clientes/schema/cliente.schema';
 
 export class CreateProductoDto {
     @IsString()
