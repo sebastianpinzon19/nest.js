@@ -1,0 +1,41 @@
+# Node modules
+node_modules/
+# Logs
+logs/
+*.log
+# Environment variables
+.env
+# Build output
+dist/
+build/
+# Temporary files
+tmp/
+temp/
+# IDE specific files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Template for AL projects for Dynamics 365 Business Central
+.vscode/
+.alcache/
+.alpackages/
+.snapshots/
+.output/
+*.app
+rad.json
+*.g.xlf
+*.flf
+TestResults.xml
+
+# Otros archivos de configuración
+*.json
+*.xml
+*.pdb
+*.dll
+*.exe
+*.appx
+*.appxbundle
+*.msix
+*.msixbundle
