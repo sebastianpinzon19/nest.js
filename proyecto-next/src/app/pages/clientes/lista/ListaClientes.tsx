@@ -151,7 +151,7 @@ const ListaClientes = () => {
         url = 'http://localhost:2000/api/clientes';
         method = 'POST';
       } else if (actionType === 'update') {
-        url = `http://localhost:2000/api/clientes/update/${selectedCliente._id}`;
+        url = `http://localhost:2000/api/clientes/${selectedCliente._id}`;
         method = 'PUT';
       }
       if (!url) return;
@@ -177,28 +177,34 @@ const ListaClientes = () => {
 
   const handleActivate = async (id: string) => {
     try {
-      await fetch(`http://localhost:2000/api/clientes/active/${id}`, { method: 'PUT' });
+      await fetch(`http://localhost:2000/api/clientes/active/${id}`, { method: 'PATCH' });
       fetchClientes();
     } catch (error) {
       console.error("Error al activar el cliente:", error);
+      setErrorMessage("Error al activar el cliente");
+      setOpenSnackbar(true);
     }
   };
 
   const handleDeactivate = async (id: string) => {
     try {
-      await fetch(`http://localhost:2000/api/clientes/deactivate/${id}`, { method: 'PUT' });
+      await fetch(`http://localhost:2000/api/clientes/deactivate/${id}`, { method: 'PATCH' });
       fetchClientes();
     } catch (error) {
       console.error("Error al desactivar el cliente:", error);
+      setErrorMessage("Error al desactivar el cliente");
+      setOpenSnackbar(true);
     }
   };
 
   const handleDelete = async (id: string) => {
     try {
-      await fetch(`http://localhost:2000/api/clientes/delete/${id}`, { method: 'DELETE' });
+      await fetch(`http://localhost:2000/api/clientes/${id}`, { method: 'DELETE' });
       fetchClientes();
     } catch (error) {
       console.error("Error al eliminar el cliente:", error);
+      setErrorMessage("Error al eliminar el cliente");
+      setOpenSnackbar(true);
     }
   };
 

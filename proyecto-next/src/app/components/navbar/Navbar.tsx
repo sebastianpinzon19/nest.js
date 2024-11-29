@@ -19,7 +19,7 @@ import Link from "next/link";
 // Estilos personalizados para los elementos del sidebar
 const SidebarContainer = styled(Box)({
   width: 250,
-  background: "linear-gradient(135deg, #6a11cb 0%, #2575fc 100%)", // Gradiente similar al de los otros componentes
+  background: "linear-gradient(135deg, #159040FF 0%, #09AC24FF 100%)",
   height: "100vh",
   color: "#fff",
   padding: "20px",
@@ -31,23 +31,29 @@ const SidebarHeader = styled(Typography)({
   fontWeight: "bold",
   textAlign: "center",
   marginBottom: "1rem",
-  color: "#fff", // Cambiado a blanco para mejor contraste
+  color: "#fff",
 });
 
 const SidebarItem = styled(ListItem)({
   padding: "15px 10px",
   margin: "10px 0",
-  borderRadius: "10px", // Bordes más redondeados
+  borderRadius: "10px",
   transition: "background-color 0.3s ease, transform 0.3s ease",
   "&:hover": {
-    backgroundColor: "rgba(255, 255, 255, 0.1)", // Fondo semi-transparente al pasar el ratón
-    transform: "translateY(-3px)", // Efecto de elevación sutil
+    backgroundColor: "rgba(254, 255, 255, 0.1)",
+    transform: "translateY(-3px)",
   },
 });
 
 const SidebarDivider = styled(Divider)({
-  backgroundColor: "rgba(255, 255, 255, 0.2)", // Divisor semi-transparente
+  backgroundColor: "rgba(255, 255, 255, 0.2)",
   margin: "10px 0",
+});
+
+// Estilo personalizado para el ícono del menú
+const StyledMenuIcon = styled(MenuIcon)({
+  fontSize: "2rem",
+  color: "#000",
 });
 
 const Navbar = () => {
@@ -65,7 +71,7 @@ const Navbar = () => {
       <SidebarHeader variant="h6">Navegación</SidebarHeader>
       <List>
         <SidebarItem>
-          <Link href="/pages/home/" passHref style={{ color: "inherit", textDecoration: "none", width: "100%" }}>
+          <Link href="/" passHref style={{ color: "inherit", textDecoration: "none", width: "100%" }}>
             <ListItemText primary="Home" />
           </Link>
         </SidebarItem>
@@ -97,8 +103,11 @@ const Navbar = () => {
       <AppBar position="fixed" sx={{ background: "transparent", boxShadow: "none" }}>
         <Toolbar>
           <IconButton edge="start" color="inherit" aria-label="menu" onClick={toggleDrawer(true)}>
-            <MenuIcon sx={{ color: "#fff" }} />
+            <StyledMenuIcon />
           </IconButton>
+          <Typography variant="h6" sx={{ flexGrow: 1, color: "#000" }}>
+            MENU
+          </Typography>
         </Toolbar>
       </AppBar>
 

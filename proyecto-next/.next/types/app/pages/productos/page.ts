@@ -1,4 +1,4 @@
-// File: C:\Users\Aprendiz\Documents\next.js-main\proyecto-next\src\app\pages\productos\page.jsx
+// File: C:\Users\Aprendiz\Desktop\next.js-main\proyecto-next\src\app\pages\productos\page.jsx
 import * as entry from '../../../../../src/app/pages/productos/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

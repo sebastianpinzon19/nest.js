@@ -1,6 +1,5 @@
-import React from "react";
+/*import React from "react";
 import Link from "next/link";
-import Home from "../pages/home/principal/Home";
 import ProveedorLista from '../pages/proveedores/lista/ListaProveedores'
 
 const NavbarRoutes = () =>{
@@ -20,4 +19,4 @@ const NavbarRoutes = () =>{
     )
 }
 
-export default NavbarRoutes;
+export default NavbarRoutes;*/
